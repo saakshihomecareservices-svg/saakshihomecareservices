@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saakshi Home Care Services</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+        }
+        .text-logo {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-orange-50 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-teal-50 shadow-lg py-4 px-6 fixed top-0 w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <!-- New logo with a house, hands, and heart -->
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-rose-500" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.5L3 8v12h18V8L12 2.5zM12 4.1L18.5 8 12 11.9 5.5 8 12 4.1z"/>
+                  <path d="M7 16a2 2 0 012-2h6a2 2 0 012 2v2a2 2 0 01-2 2h-6a2 2 0 01-2-2v-2z"/>
+                  <path d="M12 11a4 4 0 00-4 4v2h8v-2a4 4 0 00-4-4zM6 15a6 6 0 016-6 6 6 0 016 6v3a1 1 0 01-1 1H7a1 1 0 01-1-1v-3z"/>
+                  <path d="M12 12c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                </svg> -->
+                <img src="./shcs.jpeg" style="height: 72px"/>
+                <span class="text-xl font-bold text-gray-900">Saakshi Home Care</span>
+            </a>
+            <!-- Navigation Links - Hidden on small screens, shown with a hamburger menu later if needed -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#services" class="text-gray-600 hover:text-teal-500 font-medium transition duration-300">Services</a>
+                <a href="#about" class="text-gray-600 hover:text-teal-500 font-medium transition duration-300">About Us</a>
+                <a href="#contact" class="text-gray-600 hover:text-teal-500 font-medium transition duration-300">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-teal-50 to-orange-50 py-20 md:py-32 text-center rounded-lg m-4 shadow-xl">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">Your Trusted Partner in Home Care</h1>
+                <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+                    Providing compassionate and reliable home care services tailored to your family's needs.
+                </p>
+                <a href="#services" class="inline-block bg-teal-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-teal-600 transition duration-300 transform hover:scale-105">
+                    Explore Our Services
+                </a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 md:py-24 px-4">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Our Comprehensive Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    <!-- Service Card 1: Child Care -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <div class="mb-4">
+                            <img src="https://images.pexels.com/photos/3663048/pexels-photo-3663048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/150x150/5cb85c/fff?text=Child+Care';" alt="Child Care Services" class="rounded-full w-24 h-24 object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Child Care</h3>
+                        <p class="text-gray-600">
+                            Safe and nurturing care for your little ones by experienced and verified professionals.
+                        </p>
+                    </div>
+
+                    <!-- Service Card 2: Elder Care Services -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <div class="mb-4">
+                            <img src="https://images.pexels.com/photos/3823490/pexels-photo-3823490.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/150x150/337ab7/fff?text=Old+Age+Care';" alt="Elder Care Services" class="rounded-full w-24 h-24 object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Elder Care Services</h3>
+                        <p class="text-gray-600">
+                            Compassionate assistance and companionship for the elderly, ensuring their well-being and comfort.
+                        </p>
+                    </div>
+
+                    <!-- Service Card 3: House Servant -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <div class="mb-4">
+                            <img src="https://images.pexels.com/photos/4239082/pexels-photo-4239082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/150x150/f0ad4e/fff?text=House+Servant';" alt="House Servant Services" class="rounded-full w-24 h-24 object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">House Servant</h3>
+                        <p class="text-gray-600">
+                            Reliable help for maintaining a clean and organized home, with attention to every detail.
+                        </p>
+                    </div>
+
+                    <!-- Service Card 4: Home Cook -->
+                    <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <div class="mb-4">
+                            <img src="https://images.pexels.com/photos/5665809/pexels-photo-5665809.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/150x150/d9534f/fff?text=Home+Cook';" alt="Home Cook Services" class="rounded-full w-24 h-24 object-cover">
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Home Cook</h3>
+                        <p class="text-gray-600">
+                            Delicious and healthy home-cooked meals prepared by skilled chefs to meet your dietary needs.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="bg-gray-100 py-16 md:py-24 px-4 rounded-lg m-4 shadow-xl">
+            <div class="container mx-auto">
+                <div class="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
+                    <div class="w-full md:w-1/2">
+                        <img src="https://images.pexels.com/photos/3823485/pexels-photo-3823485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/600x400/fff?text=About+Us';" alt="Team discussing care plans" class="rounded-xl shadow-xl">
+                    </div>
+                    <div class="w-full md:w-1/2 text-center md:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Commitment to Care</h2>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            At Saakshi Home Care, we believe that everyone deserves quality, compassionate care in the comfort of their own home. Our mission is to provide professional, reliable, and personalized services that make a real difference in the lives of our clients and their families.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Our team is composed of dedicated and trustworthy individuals who are passionate about their work. We are committed to upholding the highest standards of integrity and service, ensuring a safe and positive experience for all.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 px-4">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Get in Touch</h2>
+                <div class="bg-white p-8 md:p-12 rounded-xl shadow-2xl max-w-3xl mx-auto">
+                    <p class="text-center text-gray-600 mb-4">
+                        Ready to find the perfect home care solution? Fill out the form below or call us at <a href="tel:+918374315697" class="text-teal-500 font-bold hover:underline">+91-8278787865</a>.
+                    </p>
+                    <p class="text-center text-gray-600 mb-8">
+                        We'll get back to you shortly.
+                    </p>
+                    <form action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 transition duration-300 p-2">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 transition duration-300 p-2">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 transition duration-300 p-2">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 transition duration-300 p-2"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="inline-block bg-teal-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-teal-600 transition duration-300 transform hover:scale-105">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto text-center text-sm px-4">
+            <p class="mb-2">&copy; 2024 Saakshi Home Care Services. All rights reserved.</p>
+            <p>Contact Us: <a href="tel:+918278787865" class="text-teal-400 hover:underline">+91-8278787865</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
