@@ -4,105 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saakshi Home Care Services</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f7f9fc;
+            background-color: #fcfcfc;
         }
+        
+        /* Custom class for the background image on the main content area */
+        .main-content-background {
+            /* Set the logo image as the background */
+            background-image: url('./shcs.jpeg');
+            background-repeat: no-repeat;
+            background-position: center 20%; /* Position slightly down from the top */
+            background-size: 500px auto; /* Make the logo large */
+            
+            /* Apply a semi-transparent white overlay on top of the image to ensure text is readable */
+            position: relative;
+        }
+
+        .main-content-background::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fcfcfc; /* Body background color */
+            opacity: 0.95; /* High opacity for readability (95% transparent) */
+            z-index: 1; /* Place overlay below content but above background image */
+        }
+
+        /* Ensure all direct children of main have a higher z-index to sit on top of the overlay */
+        .main-content-background > * {
+            position: relative;
+            z-index: 2;
+        }
+
         .text-logo {
             font-family: 'Inter', sans-serif;
-            font-weight: 700;
+            font-weight: 800;
+            color: #111827;
+        }
+        .container {
+            max-width: 1280px;
+        }
+        .form-input-custom:focus {
+            border-color: #2dd4bf;
+            box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.5);
+            outline: none;
         }
     </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-teal': '#14b8a6',
+                        'secondary-orange': '#fff7ed',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-orange-50 text-gray-800">
+<body class="text-gray-800">
 
-    <!-- Header & Navigation -->
-    <header class="bg-teal-50 shadow-lg py-4 px-6 fixed top-0 w-full z-50">
+    <header class="bg-white shadow-xl py-3 px-6 fixed top-0 w-full z-50 border-b border-gray-100">
         <div class="container mx-auto flex justify-between items-center">
-            <!-- Logo -->
-            <a href="#" class="flex items-center space-x-2">
-                <!-- New logo with a house, hands, and heart -->
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-rose-500" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2.5L3 8v12h18V8L12 2.5zM12 4.1L18.5 8 12 11.9 5.5 8 12 4.1z"/>
-                  <path d="M7 16a2 2 0 012-2h6a2 2 0 012 2v2a2 2 0 01-2 2h-6a2 2 0 01-2-2v-2z"/>
-                  <path d="M12 11a4 4 0 00-4 4v2h8v-2a4 4 0 00-4-4zM6 15a6 6 0 016-6 6 6 0 016 6v3a1 1 0 01-1 1H7a1 1 0 01-1-1v-3z"/>
-                  <path d="M12 12c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-                </svg> -->
-                <img src="./shcs.jpeg" style="height: 72px"/>
-                <span class="text-xl font-bold text-gray-900">Saakshi Home Care</span>
+            <a href="#" class="flex items-center space-x-3">
+                <img 
+                    src="./shcs.jpeg" 
+                    style="height: 100px" 
+                    alt="Saakshi Home Care Logo"
+                    class="rounded-full shadow-xl shadow-amber-300/60 ring-2 ring-primary-teal transform transition duration-500 hover:scale-[1.05]"
+                />
+                <span class="text-2xl font-extrabold text-gray-900 hidden sm:block">Saakshi Home Care</span>
             </a>
-            <!-- Navigation Links - Hidden on small screens, shown with a hamburger menu later if needed -->
-            <nav class="hidden md:flex space-x-8">
-                <a href="#services" class="text-gray-600 hover:text-teal-500 font-medium transition duration-300">Services</a>
-                <a href="#about" class="text-gray-600 hover:text-teal-500 font-medium transition duration-300">About Us</a>
-                <a href="#contact" class="text-gray-600 hover:text-teal-500 font-medium transition duration-300">Contact</a>
+            <nav class="hidden md:flex space-x-10">
+                <a href="#services" class="text-gray-600 hover:text-primary-teal font-medium transition duration-300 relative group">
+                    Services
+                    <span class="absolute left-0 bottom-0 h-0.5 bg-primary-teal w-0 group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#about" class="text-gray-600 hover:text-primary-teal font-medium transition duration-300 relative group">
+                    About Us
+                    <span class="absolute left-0 bottom-0 h-0.5 bg-primary-teal w-0 group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#contact" class="text-gray-600 hover:text-primary-teal font-medium transition duration-300 relative group">
+                    Contact
+                    <span class="absolute left-0 bottom-0 h-0.5 bg-primary-teal w-0 group-hover:w-full transition-all duration-300"></span>
+                </a>
             </nav>
         </div>
     </header>
 
-    <main class="pt-20">
-        <!-- Hero Section -->
-        <section class="bg-gradient-to-r from-teal-50 to-orange-50 py-20 md:py-32 text-center rounded-lg m-4 shadow-xl">
+    <div class="pt-[140px] bg-primary-teal text-white py-2 shadow-inner">
+        <div class="container mx-auto px-4 flex justify-center md:justify-end items-center space-x-6 text-sm font-medium">
+            
+            <div class="flex items-center space-x-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 3.123a1 1 0 01-.158.91l-1.499 1.499a11.94 11.94 0 007.828 7.828l1.499-1.499a1 1 0 01.91-.158l3.123.74A1 1 0 0118 17v2a1 1 0 01-1 1h-17a1 1 0 01-1-1v-14z"></path></svg>
+                <a href="tel:+918374315697" class="hover:underline">+91-8374315697</a>
+            </div>
+
+            <div class="flex items-center space-x-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                <a href="mailto:saakshihomecareservices@gmail.com" class="hover:underline">saakshihomecareservices@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content-background">
+    <main class="pt-0">
+        <section class="bg-gradient-to-br from-primary-teal/10 to-secondary-orange/50 py-24 md:py-36 text-center rounded-b-2xl shadow-xl">
             <div class="container mx-auto px-4">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">Your Trusted Partner in Home Care</h1>
-                <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-                    Providing compassionate and reliable home care services tailored to your family's needs.
+                <p class="text-primary-teal text-lg font-semibold mb-3 tracking-wider uppercase">Compassion, Reliability, Trust</p>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-6 leading-tight">Your Trusted Partner in Home Care</h1>
+                <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-10">
+                    Providing compassionate and reliable home care services tailored to your family's unique needs.
                 </p>
-                <a href="#services" class="inline-block bg-teal-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-teal-600 transition duration-300 transform hover:scale-105">
+                <a href="#services" class="inline-block bg-primary-teal text-white font-bold py-3.5 px-10 rounded-full shadow-2xl shadow-primary-teal/40 hover:bg-teal-600 transition duration-300 transform hover:scale-105 hover:shadow-primary-teal/60">
                     Explore Our Services
                 </a>
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section id="services" class="py-16 md:py-24 px-4">
+        <section id="services" class="py-20 md:py-28 px-4">
             <div class="container mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Our Comprehensive Services</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-4">Our Comprehensive Services</h2>
+                <p class="text-lg text-center text-gray-500 mb-16 max-w-2xl mx-auto">We offer a range of professional services to support your family's needs right in the comfort of your home.</p>
 
-                    <!-- Service Card 1: Child Care -->
-                    <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
-                        <div class="mb-4">
-                            <img src="https://images.pexels.com/photos/3663048/pexels-photo-3663048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/150x150/5cb85c/fff?text=Child+Care';" alt="Child Care Services" class="rounded-full w-24 h-24 object-cover">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+                    <div class="bg-white border-t-4 border-primary-teal rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-2xl transition duration-500 transform hover:-translate-y-2">
+                        <div class="mb-5 p-3 rounded-full bg-primary-teal/10 border border-primary-teal/20">
+                            <img src="https://images.pexels.com/photos/3663048/pexels-photo-3663048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/100x100/10b981/fff?text=Child+Care';" alt="Child Care Services" class="rounded-full w-20 h-20 object-cover border-4 border-white shadow-md">
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Child Care</h3>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Child Care</h3>
                         <p class="text-gray-600">
                             Safe and nurturing care for your little ones by experienced and verified professionals.
                         </p>
                     </div>
 
-                    <!-- Service Card 2: Elder Care Services -->
-                    <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
-                        <div class="mb-4">
-                            <img src="https://images.pexels.com/photos/3823490/pexels-photo-3823490.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/150x150/337ab7/fff?text=Old+Age+Care';" alt="Elder Care Services" class="rounded-full w-24 h-24 object-cover">
+                    <div class="bg-white border-t-4 border-primary-teal rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-2xl transition duration-500 transform hover:-translate-y-2">
+                        <div class="mb-5 p-3 rounded-full bg-primary-teal/10 border border-primary-teal/20">
+                            <img src="https://images.pexels.com/photos/3823490/pexels-photo-3823490.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/100x100/10b981/fff?text=Old+Age+Care';" alt="Elder Care Services" class="rounded-full w-20 h-20 object-cover border-4 border-white shadow-md">
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Elder Care Services</h3>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Elder Care Services</h3>
                         <p class="text-gray-600">
                             Compassionate assistance and companionship for the elderly, ensuring their well-being and comfort.
                         </p>
                     </div>
 
-                    <!-- Service Card 3: House Servant -->
-                    <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
-                        <div class="mb-4">
-                            <img src="https://images.pexels.com/photos/4239082/pexels-photo-4239082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/150x150/f0ad4e/fff?text=House+Servant';" alt="House Servant Services" class="rounded-full w-24 h-24 object-cover">
+                    <div class="bg-white border-t-4 border-primary-teal rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-2xl transition duration-500 transform hover:-translate-y-2">
+                        <div class="mb-5 p-3 rounded-full bg-primary-teal/10 border border-primary-teal/20">
+                            <img src="https://images.pexels.com/photos/4033285/pexels-photo-4033285.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/100x100/10b981/fff?text=Patient+Care';" alt="Patient Care Services" class="rounded-full w-20 h-20 object-cover border-4 border-white shadow-md">
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">House Servant</h3>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Patient Care</h3>
                         <p class="text-gray-600">
-                            Reliable help for maintaining a clean and organized home, with attention to every detail.
+                            Professional and empathetic care for patients, assisting with daily needs and health monitoring.
                         </p>
                     </div>
 
-                    <!-- Service Card 4: Home Cook -->
-                    <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
-                        <div class="mb-4">
-                            <img src="https://images.pexels.com/photos/5665809/pexels-photo-5665809.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/150x150/d9534f/fff?text=Home+Cook';" alt="Home Cook Services" class="rounded-full w-24 h-24 object-cover">
+                    <div class="bg-white border-t-4 border-primary-teal rounded-xl shadow-lg p-8 flex flex-col items-center text-center hover:shadow-2xl transition duration-500 transform hover:-translate-y-2">
+                        <div class="mb-5 p-3 rounded-full bg-primary-teal/10 border border-primary-teal/20">
+                            <img src="https://images.pexels.com/photos/5665809/pexels-photo-5665809.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/100x100/10b981/fff?text=Home+Cook';" alt="Home Cook Services" class="rounded-full w-20 h-20 object-cover border-4 border-white shadow-md">
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Home Cook</h3>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Home Cook</h3>
                         <p class="text-gray-600">
                             Delicious and healthy home-cooked meals prepared by skilled chefs to meet your dietary needs.
                         </p>
@@ -112,57 +181,64 @@
             </div>
         </section>
 
-        <!-- About Us Section -->
-        <section id="about" class="bg-gray-100 py-16 md:py-24 px-4 rounded-lg m-4 shadow-xl">
+        <section id="about" class="bg-gray-50 py-20 md:py-32 px-4 rounded-xl m-4 shadow-2xl">
             <div class="container mx-auto">
-                <div class="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
+                <div class="flex flex-col md:flex-row items-center space-y-12 md:space-y-0 md:space-x-16">
                     <div class="w-full md:w-1/2">
-                        <img src="https://images.pexels.com/photos/3823485/pexels-photo-3823485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/600x400/fff?text=About+Us';" alt="Team discussing care plans" class="rounded-xl shadow-xl">
+                        <img src="https://images.pexels.com/photos/3823485/pexels-photo-3823485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/600x400/fff?text=About+Us';" alt="Team discussing care plans" class="rounded-2xl shadow-2xl transform hover:scale-[1.02] transition duration-500">
                     </div>
                     <div class="w-full md:w-1/2 text-center md:text-left">
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Commitment to Care</h2>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            At Saakshi Home Care, we believe that everyone deserves quality, compassionate care in the comfort of their own home. Our mission is to provide professional, reliable, and personalized services that make a real difference in the lives of our clients and their families.
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">Our Commitment to Care</h2>
+                        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                            At **Saakshi Home Care**, we believe that everyone deserves quality, compassionate care in the comfort of their own home. Our mission is to provide professional, reliable, and **personalized services** that make a real difference in the lives of our clients and their families.
                         </p>
-                        <p class="text-gray-600 leading-relaxed">
-                            Our team is composed of dedicated and trustworthy individuals who are passionate about their work. We are committed to upholding the highest standards of integrity and service, ensuring a safe and positive experience for all.
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            Our team is composed of dedicated and trustworthy individuals who are passionate about their work. We are committed to upholding the **highest standards of integrity and service**, ensuring a safe and positive experience for all.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-16 md:py-24 px-4">
+        <section id="contact" class="py-20 md:py-28 px-4">
             <div class="container mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Get in Touch</h2>
-                <div class="bg-white p-8 md:p-12 rounded-xl shadow-2xl max-w-3xl mx-auto">
-                    <p class="text-center text-gray-600 mb-4">
-                        Ready to find the perfect home care solution? Fill out the form below or call us at <a href="tel:+918374315697" class="text-teal-500 font-bold hover:underline">+91-8278787865</a>.
+                <h2 class="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-16">Get in Touch</h2>
+                <div class="bg-white p-8 md:p-16 rounded-2xl shadow-3xl max-w-4xl mx-auto border-t-8 border-primary-teal">
+                    <p class="text-center text-gray-600 text-lg mb-4">
+                        Ready to find the perfect home care solution? Call us or send us an email to get started.
                     </p>
-                    <p class="text-center text-gray-600 mb-8">
-                        We'll get back to you shortly.
-                    </p>
-                    <form action="#" method="POST" class="space-y-6">
+                    
+                    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8 mb-10">
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <svg class="w-6 h-6 text-primary-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <a href="tel:+918374315697" class="text-lg font-semibold hover:text-teal-600 transition duration-300">+91-8374315697</a>
+                        </div>
+                        <div class="flex items-center space-x-3 text-gray-700">
+                            <svg class="w-6 h-6 text-primary-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <a href="mailto:saakshihomecareservices@gmail.com" class="text-lg font-semibold hover:text-teal-600 transition duration-300">saakshihomecareservices@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <form action="#" method="POST" class="space-y-8">
                         <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
-                            <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 transition duration-300 p-2">
+                            <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-primary-teal focus:border-primary-teal transition duration-300 p-3 border form-input-custom">
                         </div>
                         <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                            <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 transition duration-300 p-2">
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-primary-teal focus:border-primary-teal transition duration-300 p-3 border form-input-custom">
                         </div>
                         <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 transition duration-300 p-2">
+                            <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91-XXX-XXX-XXXX" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-primary-teal focus:border-primary-teal transition duration-300 p-3 border form-input-custom">
                         </div>
                         <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
-                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 transition duration-300 p-2"></textarea>
+                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Your Message / Service Needed</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your home care needs..." class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-primary-teal focus:border-primary-teal transition duration-300 p-3 border form-input-custom"></textarea>
                         </div>
-                        <div class="text-center">
-                            <button type="submit" class="inline-block bg-teal-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-teal-600 transition duration-300 transform hover:scale-105">
-                                Send Message
+                        <div class="text-center pt-4">
+                            <button type="submit" class="inline-block bg-primary-teal text-white font-bold py-3.5 px-12 rounded-full shadow-xl shadow-primary-teal/40 hover:bg-teal-600 transition duration-300 transform hover:scale-105">
+                                Send Inquiry
                             </button>
                         </div>
                     </form>
@@ -170,14 +246,24 @@
             </div>
         </section>
     </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
+    </div> <footer class="bg-gray-900 text-white py-10 border-t-4 border-primary-teal">
         <div class="container mx-auto text-center text-sm px-4">
-            <p class="mb-2">&copy; 2024 Saakshi Home Care Services. All rights reserved.</p>
-            <p>Contact Us: <a href="tel:+918278787865" class="text-teal-400 hover:underline">+91-8278787865</a></p>
+            <p class="mb-3 text-lg font-semibold text-primary-teal">Saakshi Home Care Services</p>
+            <p class="mb-2 text-gray-400">&copy; 2024 Saakshi Home Care Services. All rights reserved.</p>
+            <div class="space-x-4 text-gray-300">
+                <a href="tel:+918374315697" class="hover:text-primary-teal transition duration-300">Call Us: +91-8374315697</a>
+                <span class="text-gray-600">|</span>
+                <a href="mailto:saakshihomecareservices@gmail.com" class="hover:text-primary-teal transition duration-300">Email: saakshihomecareservices@gmail.com</a>
+            </div>
         </div>
     </footer>
+    
+    <a href="https://wa.me/918374315697" target="_blank" title="Chat with us on WhatsApp" 
+       class="fixed right-6 top-1/2 transform -translate-y-1/2 z-[100] bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-2xl transition duration-300 ease-in-out scale-110 hover:scale-125">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.039 2C6.54 2 2.043 6.496 2.046 11.996 2.046 13.784 2.536 15.454 3.415 16.924L2.046 22L7.382 20.621C8.847 21.496 10.518 22 12.039 22H12.062C17.561 22 22.06 17.502 22.057 12.002 22.057 6.502 17.559 2 12.062 2H12.039ZM16.488 15.352C16.438 15.485 15.657 15.867 15.361 15.908 15.066 15.949 14.851 15.969 14.636 15.929 14.421 15.891 13.811 15.698 13.111 15.15C12.411 14.597 11.777 13.63 11.606 13.385C11.436 13.141 11.309 13.014 11.127 12.77C10.945 12.528 10.793 12.415 10.641 12.181C10.489 11.951 10.02 11.325 9.776 10.758C9.531 10.191 9.497 9.697 9.613 9.471C9.711 9.278 9.946 9.202 10.129 9.088C10.299 8.973 10.514 8.78 10.729 8.56C10.943 8.337 11.168 8.083 11.411 7.828C11.654 7.573 11.836 7.594 12.051 7.887C12.266 8.181 12.435 8.563 12.605 8.945C12.775 9.327 12.902 9.709 13.048 10.091C13.194 10.473 13.439 10.88 13.257 11.134C13.076 11.388 12.949 11.516 12.779 11.758C12.609 12.002 12.428 12.215 12.23 12.441C12.032 12.668 11.861 12.837 11.691 13.064C11.52 13.291 11.339 13.483 11.536 13.682C11.734 13.882 13.784 15.161 14.125 15.329C14.466 15.497 14.664 15.61 14.862 15.756C15.06 15.903 15.258 15.989 15.456 16.03C15.654 16.071 16.142 16.01 16.488 15.542C16.834 15.074 16.834 14.673 16.834 14.398C16.811 14.123 16.685 13.93 16.488 13.676L16.488 15.352Z" />
+        </svg>
+    </a>
 
 </body>
 </html>
