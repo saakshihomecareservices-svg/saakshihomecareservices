@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saakshi Home Care Services</title>
+    
+    <title>Homecare Services & Healthcare Services | Saakshi Home Care - Elder Care, Nursing, Baby Care</title>
+    
+    <meta name="description" content="Saakshi Home Health Care Service provides professional Homecare and Healthcare services, including certified Home Nursing, Elder Care, Patient Care, and reliable Baby Care in [Insert Your City/Region Here]. Contact us for compassionate home care."/>
+    
+    <meta name="keywords" content="Homecare Services, Healthcare Services, Home Health Care, Elder Care, Home Nursing Services, Patient Care, Baby Care, Saakshi Home Care, Attendant Service, Domestic Servant"/>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         // Custom Tailwind Config for consistent colors
@@ -11,7 +17,6 @@
             theme: {
                 extend: {
                     colors: {
-                        // Using a slightly darker teal for better contrast and professionalism
                         'primary-teal': '#0d9488', // Teal-600
                         'secondary-teal': '#14b8a6', // Teal-500
                     }
@@ -25,25 +30,52 @@
             font-family: 'Inter', sans-serif;
             background-color: #f7f9fc;
         }
-        /* Custom class for the fixed button to ensure it's always circular and at a safe position */
-        .whatsapp-fixed-button {
+        /* Common style for the floating buttons */
+        .floating-action-button {
             transition: all 0.3s ease;
-            right: 20px; /* Safe distance from the edge */
-            bottom: 20px; /* Safe distance from the bottom */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6p x rgba(0, 0, 0, 0.1); 
         }
-        .whatsapp-fixed-button:hover {
+        .floating-action-button:hover {
             transform: scale(1.1);
         }
-        /* Style to ensure the main content is below the new two-tier header */
+        /* Ensures main content sits below the fixed headers and the sticky breadcrumb */
         .content-padding-top {
-            padding-top: calc(36px + 90px); /* 36px for top-bar + 90px for main header (approx.) */
+            padding-top: 104px; 
         }
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
             .content-padding-top {
-                padding-top: calc(32px + 64px); /* Smaller header height on mobile */
+                padding-top: 124px; 
             }
         }
     </style>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Saakshi Home Health Care Service",
+      "image": "./shcs.jpeg", 
+      "url": "https://[Your-Website-URL.com]", 
+      "telephone": "+91-8374315697",
+      "email": "saakshihomecareservices@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "[Your Street Address Here]",
+        "addressLocality": "[Your City]",
+        "addressRegion": "[Your State]",
+        "postalCode": "[Your Postal Code]",
+        "addressCountry": "IN" 
+      },
+      "priceRange": "$$",
+      "serviceType": [
+        "Elder Care",
+        "Home Nursing Service",
+        "Patient Care",
+        "Baby Care",
+        "Domestic Servant"
+      ]
+    }
+    </script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -51,112 +83,148 @@
         <div class="container mx-auto px-4 flex justify-end items-center space-x-6 text-sm font-medium">
             <div class="flex items-center space-x-1">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 3.123a1 1 0 01-.158.91l-1.499 1.499a11.94 11.94 0 007.828 7.828l1.499-1.499a1 1 0 01.91-.158l3.123.74A1 1 0 0118 17v2a1 1 0 01-1 1h-17a1 1 0 01-1-1v-14z"></path></svg>
-                <a href="tel:+918374315697" class="hover:underline">+91-8374315697</a>
+                <a href="tel:+918374315697" class="hover:underline" title="Call Saakshi Home Health Care">+91-8374315697</a>
             </div>
             <div class="hidden sm:flex items-center space-x-1">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-                <a href="mailto:saakshihomecareservices@gmail.com" class="hover:underline">saakshihomecareservices@gmail.com</a>
+                <a href="mailto:saakshihomecareservices@gmail.com" class="hover:underline" title="Email Saakshi Home Health Care">saakshihomecareservices@gmail.com</a>
             </div>
         </div>
     </div>
 
-
-    <header class="bg-white shadow-xl py-4 px-6 fixed top-9 sm:top-9 w-full z-40 border-b border-gray-100">
+    <header class="bg-white shadow-xl py-4 px-6 fixed top-8 w-full z-40 border-b border-gray-100">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="flex items-center space-x-3">
                 <img 
                     src="./shcs.jpeg" 
-                    alt="Saakshi Home Care Logo" 
+                    alt="Saakshi Home Health Care Service Company Logo" 
                     class="h-12 w-auto rounded-full ring-2 ring-secondary-teal"
                 />
-                <span class="text-2xl font-extrabold text-gray-900 leading-none">Saakshi Home Care</span>
+                <span class="text-2xl font-extrabold text-gray-900 leading-none">Saakshi Home Health Care Service</span>
             </a>
             
             <nav class="hidden md:flex space-x-8">
-                <a href="#services" class="text-gray-600 hover:text-primary-teal font-medium transition duration-300">Services</a>
-                <a href="#about" class="text-gray-600 hover:text-primary-teal font-medium transition duration-300">About Us</a>
-                <a href="#contact" class="text-gray-600 hover:text-primary-teal font-medium transition duration-300">Contact</a>
+                <a href="#services" class="text-gray-600 hover:text-primary-teal font-medium transition duration-300" title="Our Home Care Services">Services</a>
+                <a href="#about" class="text-gray-600 hover:text-primary-teal font-medium transition duration-300" title="About Saakshi Home Care">About Us</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary-teal font-medium transition duration-300" title="Contact Us for Home Care">Contact</a>
             </nav>
         </div>
     </header>
 
     <main class="content-padding-top">
+        
+        <div class="sticky top-[96px] z-30 bg-white shadow-md border-b border-gray-100 w-full md:hidden">
+            <nav class="container mx-auto px-4 text-sm">
+                
+                <div class="flex justify-between items-center py-4">
+                    <div class="font-bold text-gray-900 mr-1">Quick Links:</div>
+                    
+                    <button id="quickLinkToggle" class="p-1 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-teal" aria-expanded="false" aria-controls="quickLinksContent">
+                        <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        <svg id="closeIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+                
+                <div id="quickLinksContent" class="hidden pb-2">
+                    <ol class="flex flex-col space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <a href="#services" class="text-primary-teal font-medium hover:text-secondary-teal transition duration-200" title="View Home Care Services">Services</a>
+                        </li>
+                        <li class="flex items-center">
+                            <a href="#about" class="text-primary-teal font-medium hover:text-secondary-teal transition duration-200" title="Learn About Our Care Mission">About Us</a>
+                        </li>
+                        <li><a href="#contact" class="text-primary-teal font-medium hover:text-secondary-teal transition duration-200" title="Get Home Care Contact Info">Contact</a></li>
+                    </ol>
+                </div>
+            </nav>
+        </div>
         <section class="bg-gradient-to-r from-teal-50 to-amber-50 py-20 md:py-32 text-center rounded-lg m-4 shadow-xl">
             <div class="container mx-auto px-4">
-                <p class="text-primary-teal text-lg font-semibold mb-3 tracking-wider uppercase">COMPASSION, RELIABILITY, TRUST</p>
-                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">Your Trusted Partner in Home Care</h1>
+                <p class="text-primary-teal text-lg font-semibold mb-3 tracking-wider uppercase">Your Family's Well being is our Priority</p>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">Professional Homecare and Healthcare Services in Your City</h1>
                 <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-                    Providing compassionate and reliable home care services tailored to your family's unique needs.
+                    Providing compassionate and reliable **homecare services** tailored to your family's unique needs, including **elder care** and **home nursing service**.
                 </p>
-                <a href="#services" class="inline-block bg-secondary-teal text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-primary-teal transition duration-300 transform hover:scale-105">
+                <a href="#services" class="inline-block bg-secondary-teal text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-primary-teal transition duration-300 transform hover:scale-105" title="View all home care options">
                     Explore Our Services
                 </a>
                 
                 <p class="text-sm text-gray-500 mt-4">
-                    Or call us directly at <a href="tel:+918374315697" class="text-primary-teal font-bold hover:underline">+91-8374315697</a>
+                    Or call us directly at <a href="tel:+918374315697" class="text-primary-teal font-bold hover:underline" title="Call for a free consultation">+91-8374315697</a>
                 </p>
             </div>
         </section>
 
         <section id="services" class="py-16 md:py-24 px-4">
             <div class="container mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Our Comprehensive Services</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Our Comprehensive Home Healthcare Services</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
                     <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border-t-4 border-primary-teal">
                         <div class="mb-4">
-                            <img src="https://images.pexels.com/photos/3663048/pexels-photo-3663048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/150x150/5cb85c/fff?text=Child+Care';" alt="Child Care Services" class="rounded-full w-24 h-24 object-cover ring-2 ring-secondary-teal/50">
+                            <img src="./ec.jpeg" alt="Compassionate Elder Care Services at Home" class="rounded-full w-24 h-24 object-cover ring-2 ring-secondary-teal/50">
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Child Care</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Elder Care</h3>
                         <p class="text-gray-600">
-                            Safe and nurturing care for your little ones by experienced and verified professionals.
+                            Compassionate assistance, mobility support, and companionship for **seniors** in their home.
                         </p>
                     </div>
 
                     <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border-t-4 border-primary-teal">
                         <div class="mb-4">
-                            <img src="https://images.pexels.com/photos/3823490/pexels-photo-3823490.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/150x150/337ab7/fff?text=Old+Age+Care';" alt="Elder Care Services" class="rounded-full w-24 h-24 object-cover ring-2 ring-secondary-teal/50">
+                            <img src="./pc.jpeg" alt="Home Patient Care and Post-Operative Assistance" class="rounded-full w-24 h-24 object-cover ring-2 ring-secondary-teal/50">
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Elder Care Services</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Patient Care</h3>
                         <p class="text-gray-600">
-                            Compassionate assistance and companionship for the elderly, ensuring their well-being and comfort.
+                            Post-operative, chronic illness, and general bedside assistance by trained **care assistants** (a form of **healthcare service**).
                         </p>
                     </div>
 
                     <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border-t-4 border-primary-teal">
                         <div class="mb-4">
-                            <img src="https://images.pexels.com/photos/4239082/pexels-photo-4239082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/150x150/f0ad4e/fff?text=House+Servant';" alt="House Servant Services" class="rounded-full w-24 h-24 object-cover ring-2 ring-secondary-teal/50">
+                            <img src="./cc.jpeg" alt="Reliable Baby and Child Care at Home" class="rounded-full w-24 h-24 object-cover ring-2 ring-secondary-teal/50">
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">House Servant</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Baby Care</h3>
                         <p class="text-gray-600">
-                            Reliable help for maintaining a clean and organized home, with attention to every detail.
+                            Nurturing and reliable **baby care** for newborns and infants, offering peace of mind to parents.
                         </p>
                     </div>
 
                     <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border-t-4 border-primary-teal">
                         <div class="mb-4">
-                            <img src="https://images.pexels.com/photos/5665809/pexels-photo-5665809.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/150x150/d9534f/fff?text=Home+Cook';" alt="Home Cook Services" class="rounded-full w-24 h-24 object-cover ring-2 ring-secondary-teal/50">
+                            <img src="./nc.jpeg" alt="Certified Home Nursing Services and Wound Care" class="rounded-full w-24 h-24 object-cover ring-2 ring-secondary-teal/50">
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Home Cook</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Nursing Service</h3>
                         <p class="text-gray-600">
-                            Delicious and healthy home-cooked meals prepared by skilled chefs to meet your dietary needs.
+                            Professional **home nursing care** including injections, wound dressing, and monitoring by certified nurses (a direct **healthcare service**).
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border-t-4 border-primary-teal">
+                        <div class="mb-4">
+                            <img src="https://images.pexels.com/photos/4239082/pexels-photo-4239082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/150x150/9333ea/fff?text=Domestic+Servant';" alt="Reliable Domestic Servant for Household Help" class="rounded-full w-24 h-24 object-cover ring-2 ring-secondary-teal/50">
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Domestic Servant</h3>
+                        <p class="text-gray-600">
+                            Reliable household help for cleaning, cooking, laundry, and daily **home maintenance**.
                         </p>
                     </div>
 
                 </div>
             </div>
         </section>
-
+        
         <section id="about" class="bg-gray-100 py-16 md:py-24 px-4 rounded-lg m-4 shadow-xl">
             <div class="container mx-auto">
                 <div class="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
                     <div class="w-full md:w-1/2">
-                        <img src="https://images.pexels.com/photos/3823485/pexels-photo-3823485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/600x400/fff?text=About+Us';" alt="Team discussing care plans" class="rounded-xl shadow-xl">
+                        <img src="https://images.pexels.com/photos/3823485/pexels-photo-3823485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onerror="this.onerror=null;this.src='https://placehold.co/600x400/fff?text=About+Us';" alt="Saakshi Home Health Care team discussing patient care plans" class="rounded-xl shadow-xl">
                     </div>
                     <div class="w-full md:w-1/2 text-center md:text-left">
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Commitment to Care</h2>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Commitment to Compassionate Home Healthcare</h2>
                         <p class="text-gray-600 leading-relaxed mb-4">
-                            At Saakshi Home Care, we believe that everyone deserves quality, compassionate care in the comfort of their own home. Our mission is to provide professional, reliable, and personalized services that make a real difference in the lives of our clients and their families.
+                            At **Saakshi Home Health Care Service**, we believe that everyone deserves quality, compassionate **healthcare services** in the comfort of their own home. Our mission is to provide professional, reliable, and personalized **homecare services** that make a real difference in the lives of our clients and their families.
                         </p>
                         <p class="text-gray-600 leading-relaxed">
                             Our team is composed of dedicated and trustworthy individuals who are passionate about their work. We are committed to upholding the highest standards of integrity and service, ensuring a safe and positive experience for all.
@@ -168,15 +236,16 @@
 
         <section id="contact" class="py-16 md:py-24 px-4">
             <div class="container mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Get in Touch</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Get in Touch for Homecare Consultation</h2>
                 <div class="bg-white p-8 md:p-12 rounded-xl shadow-2xl max-w-3xl mx-auto border-t-4 border-primary-teal">
                     <p class="text-center text-gray-600 mb-4">
-                        Ready to find the perfect home care solution? Fill out the form below or call us at <a href="tel:+918374315697" class="text-primary-teal font-bold hover:underline">+91-8374315697</a>.
+                        Ready to find the perfect **home care solution**? Fill out the form below and click **Send Inquiry via WhatsApp** or call us at <a href="tel:+918374315697" class="text-primary-teal font-bold hover:underline" title="Call Saakshi Home Care now">+91-8374315697</a>.
                     </p>
                     <p class="text-center text-gray-600 mb-8">
-                        We'll get back to you shortly.
+                        We'll get back to you shortly to discuss your **elder care, homecare nursing, or baby care** needs.
                     </p>
-                    <form action="#" method="POST" class="space-y-6">
+                    
+                    <form id="contactForm" class="space-y-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
                             <input type="text" id="name" name="name" placeholder="Your Name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-teal focus:ring-primary-teal transition duration-300 p-2">
@@ -190,12 +259,12 @@
                             <input type="tel" id="phone" name="phone" placeholder="+91-XXX-XXX-XXXX" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-teal focus:ring-primary-teal transition duration-300 p-2">
                         </div>
                         <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700">Your Message / Service Needed</label>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Your Message / Service Needed (e.g., Elder Care, Home Nursing)</label>
                             <textarea id="message" name="message" rows="4" placeholder="Tell us about your home care needs..." class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-teal focus:ring-primary-teal transition duration-300 p-2"></textarea>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="inline-block bg-primary-teal text-white font-bold py-3 px-8 rounded-full shadow-lg shadow-primary-teal/40 hover:bg-secondary-teal transition duration-300 transform hover:scale-105">
-                                Send Inquiry
+                                Send Inquiry via WhatsApp
                             </button>
                         </div>
                     </form>
@@ -206,17 +275,91 @@
 
     <footer class="bg-gray-900 text-white py-8 border-t-4 border-primary-teal">
         <div class="container mx-auto text-center text-sm px-4">
-            <p class="mb-2">&copy; 2024 Saakshi Home Care Services. All rights reserved.</p>
-            <p>Contact Us: <a href="tel:+918374315697" class="text-secondary-teal hover:underline">+91-8374315697</a></p>
+            <p class="mb-2">&copy; 2024 Saakshi Home Health Care Service. All rights reserved.</p>
+            <p>Contact Us: <a href="tel:+918374315697" class="text-secondary-teal hover:underline" title="Call Saakshi Home Health Care for services">+91-8374315697</a></p>
         </div>
     </footer>
 
-    <a href="https://wa.me/918374315697" target="_blank" title="Chat with us on WhatsApp" 
-       class="whatsapp-fixed-button fixed z-[100] bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-2xl">
-        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.039 2C6.54 2 2.043 6.496 2.046 11.996 2.046 13.784 2.536 15.454 3.415 16.924L2.046 22L7.382 20.621C8.847 21.496 10.518 22 12.039 22H12.062C17.561 22 22.06 17.502 22.057 12.002 22.057 6.502 17.559 2 12.062 2H12.039ZM16.488 15.352C16.438 15.485 15.657 15.867 15.361 15.908 15.066 15.949 14.851 15.969 14.636 15.929 14.421 15.891 13.811 15.698 13.111 15.15C12.411 14.597 11.777 13.63 11.606 13.385C11.436 13.141 11.309 13.014 11.127 12.77C10.945 12.528 10.793 12.415 10.641 12.181C10.489 11.951 10.02 11.325 9.776 10.758C9.531 10.191 9.497 9.697 9.613 9.471C9.711 9.278 9.946 9.202 10.129 9.088C10.299 8.973 10.514 8.78 10.729 8.56C10.943 8.337 11.168 8.083 11.411 7.828C11.654 7.573 11.836 7.594 12.051 7.887C12.266 8.181 12.435 8.563 12.605 8.945C12.775 9.327 12.902 9.709 13.048 10.091C13.194 10.473 13.439 10.88 13.257 11.134C13.076 11.388 12.949 11.516 12.779 11.758C12.609 12.002 12.428 12.215 12.23 12.441C12.032 12.668 11.861 12.837 11.691 13.064C11.52 13.291 11.339 13.483 11.536 13.682C11.734 13.882 13.784 15.161 14.125 15.329C14.466 15.497 14.664 15.61 14.862 15.756C15.06 15.903 15.258 15.989 15.456 16.03C15.654 16.071 16.142 16.01 16.488 15.542C16.834 15.074 16.834 14.673 16.834 14.398C16.811 14.123 16.685 13.93 16.488 13.676L16.488 15.352Z" />
-        </svg>
-    </a>
+    <div class="fixed right-5 bottom-5 z-[100] flex flex-col space-y-4 items-center">
+        
+        <a href="tel:+918374315697" title="Call Saakshi Home Health Care directly for quick service" 
+           class="floating-action-button bg-primary-teal hover:bg-teal-700 text-white p-3 rounded-full">
+            <svg class="w-8 h-8 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 3.123a1 1 0 01-.158.91l-1.499 1.499a11.94 11.94 0 007.828 7.828l1.499-1.499a1 1 0 01.91-.158l3.123.74A1 1 0 0118 17v2a1 1 0 01-1 1h-17a1 1 0 01-1-1v-14z"></path>
+            </svg>
+        </a>
+
+        <a href="https://wa.me/918374315697" target="_blank" title="Chat with Saakshi Home Health Care on WhatsApp" 
+           class="floating-action-button bg-green-500 hover:bg-green-600 text-white p-3 rounded-full">
+            <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.039 2C6.54 2 2.043 6.496 2.046 11.996 2.046 13.784 2.536 15.454 3.415 16.924L2.046 22L7.382 20.621C8.847 21.496 10.518 22 12.039 22H12.062C17.561 22 22.06 17.502 22.057 12.002 22.057 6.502 17.559 2 12.062 2H12.039ZM16.488 15.352C16.438 15.485 15.657 15.867 15.361 15.908 15.066 15.949 14.851 15.969 14.636 15.929 14.421 15.891 13.811 15.698 13.111 15.15C12.411 14.597 11.777 13.63 11.606 13.385C11.436 13.141 11.309 13.014 11.127 12.77C10.945 12.528 10.793 12.415 10.641 12.181C10.489 11.951 10.02 11.325 9.776 10.758C9.531 10.191 9.497 9.697 9.613 9.471C9.711 9.278 9.946 9.202 10.129 9.088C10.299 8.973 10.514 8.78 10.729 8.56C10.943 8.337 11.168 8.083 11.411 7.828C11.654 7.573 11.836 7.594 12.051 7.887C12.266 8.181 12.435 8.563 12.605 8.945C12.775 9.327 12.902 9.709 13.048 10.091C13.194 10.473 13.439 10.88 13.257 11.134C13.076 11.388 12.949 11.516 12.779 11.758C12.609 12.002 12.428 12.215 12.23 12.441C12.032 12.668 11.861 12.837 11.691 13.064C11.520 13.291 11.339 13.483 11.536 13.682C11.734 13.882 13.784 15.161 14.125 15.329C14.466 15.497 14.664 15.61 14.862 15.756C15.060 15.903 15.258 15.989 15.456 16.03C15.654 16.071 16.142 16.01 16.488 15.542C16.834 15.074 16.834 14.673 16.834 14.398C16.811 14.123 16.685 13.93 16.488 13.676L16.488 15.352Z" />
+            </svg>
+        </a>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('quickLinkToggle');
+            const content = document.getElementById('quickLinksContent');
+            const menuIcon = document.getElementById('menuIcon');
+            const closeIcon = document.getElementById('closeIcon');
+            
+            // Existing Quick Links Logic
+            if (toggleButton && content) {
+                toggleButton.addEventListener('click', () => {
+                    const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true' || false;
+                    content.classList.toggle('hidden');
+                    toggleButton.setAttribute('aria-expanded', !isExpanded);
+                    menuIcon.classList.toggle('hidden');
+                    closeIcon.classList.toggle('hidden');
+                });
+                
+                content.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (window.innerWidth < 768) { 
+                            content.classList.add('hidden');
+                            toggleButton.setAttribute('aria-expanded', 'false');
+                            menuIcon.classList.remove('hidden');
+                            closeIcon.classList.add('hidden');
+                        }
+                    });
+                });
+            }
+
+            // --- WHATSAPP FORM SUBMISSION LOGIC (Remains unchanged) ---
+            const form = document.getElementById('contactForm');
+            const whatsappNumber = '918374315697'; // The target WhatsApp number
+
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Stop the form from submitting normally
+                    
+                    // 1. Get field values
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const phone = document.getElementById('phone').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // 2. Format the message for WhatsApp (using %0A for line break)
+                    const whatsappMessage = 
+                        `*New Inquiry from Website*%0A%0A` +
+                        `*Name:* ${name}%0A` +
+                        `*Email:* ${email}%0A` +
+                        `*Phone:* ${phone}%0A%0A` +
+                        `*Service Needed/Message:*%0A${message}`;
+                    
+                    // 3. Construct the WhatsApp URL, making sure the message is URL-encoded
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+                    
+                    // 4. Redirect/Open the link in a new tab
+                    window.open(whatsappUrl, '_blank');
+                    
+                    // 5. Optional: Clear the form fields after submission attempt
+                    form.reset();
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
