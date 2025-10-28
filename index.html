@@ -96,9 +96,9 @@
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="flex items-center space-x-3">
                 <img 
-                    src="./shcs.jpeg" 
+                    src="./logo.jpg" 
                     alt="Saakshi Home Health Care Service Company Logo" 
-                    class="h-12 w-auto rounded-full ring-2 ring-secondary-teal"
+                    class="h-12 w-auto"
                 />
                 <span class="text-2xl font-extrabold text-gray-900 leading-none">Saakshi Home Health Care Service</span>
             </a>
@@ -281,16 +281,23 @@
     </footer>
 
     <div class="fixed right-5 bottom-5 z-[100] flex flex-col space-y-4 items-center">
-        
+        <!-- My Location (Maps) Icon on top -->
+        <button onclick="openMapsLocation()" title="My Location" 
+            class="floating-action-button bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full">
+            <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+        </button>
+        <!-- Phone Icon below -->
         <a href="tel:+918374315697" title="Call Saakshi Home Health Care directly for quick service" 
-           class="floating-action-button bg-primary-teal hover:bg-teal-700 text-white p-3 rounded-full">
+            class="floating-action-button bg-primary-teal hover:bg-teal-700 text-white p-3 rounded-full">
             <svg class="w-8 h-8 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 3.123a1 1 0 01-.158.91l-1.499 1.499a11.94 11.94 0 007.828 7.828l1.499-1.499a1 1 0 01.91-.158l3.123.74A1 1 0 0118 17v2a1 1 0 01-1 1h-17a1 1 0 01-1-1v-14z"></path>
             </svg>
         </a>
-
+        <!-- WhatsApp Icon at the bottom -->
         <a href="https://wa.me/918374315697" target="_blank" title="Chat with Saakshi Home Health Care on WhatsApp" 
-           class="floating-action-button bg-green-500 hover:bg-green-600 text-white p-3 rounded-full">
+            class="floating-action-button bg-green-500 hover:bg-green-600 text-white p-3 rounded-full">
             <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.039 2C6.54 2 2.043 6.496 2.046 11.996 2.046 13.784 2.536 15.454 3.415 16.924L2.046 22L7.382 20.621C8.847 21.496 10.518 22 12.039 22H12.062C17.561 22 22.06 17.502 22.057 12.002 22.057 6.502 17.559 2 12.062 2H12.039ZM16.488 15.352C16.438 15.485 15.657 15.867 15.361 15.908 15.066 15.949 14.851 15.969 14.636 15.929 14.421 15.891 13.811 15.698 13.111 15.15C12.411 14.597 11.777 13.63 11.606 13.385C11.436 13.141 11.309 13.014 11.127 12.77C10.945 12.528 10.793 12.415 10.641 12.181C10.489 11.951 10.02 11.325 9.776 10.758C9.531 10.191 9.497 9.697 9.613 9.471C9.711 9.278 9.946 9.202 10.129 9.088C10.299 8.973 10.514 8.78 10.729 8.56C10.943 8.337 11.168 8.083 11.411 7.828C11.654 7.573 11.836 7.594 12.051 7.887C12.266 8.181 12.435 8.563 12.605 8.945C12.775 9.327 12.902 9.709 13.048 10.091C13.194 10.473 13.439 10.88 13.257 11.134C13.076 11.388 12.949 11.516 12.779 11.758C12.609 12.002 12.428 12.215 12.23 12.441C12.032 12.668 11.861 12.837 11.691 13.064C11.520 13.291 11.339 13.483 11.536 13.682C11.734 13.882 13.784 15.161 14.125 15.329C14.466 15.497 14.664 15.61 14.862 15.756C15.060 15.903 15.258 15.989 15.456 16.03C15.654 16.071 16.142 16.01 16.488 15.542C16.834 15.074 16.834 14.673 16.834 14.398C16.811 14.123 16.685 13.93 16.488 13.676L16.488 15.352Z" />
             </svg>
@@ -359,6 +366,29 @@
                 });
             }
         });
+
+        function openMapsLocation() {
+            // Prefer universal Google Maps URL for mobile/desktop
+            function openUrl(url) {
+                window.open(url, '_blank');
+            }
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+                    // Use universal maps URL (works for app and browser)
+                    const url = `https://maps.google.com/?q=${lat},${lng}`;
+                    openUrl(url);
+                }, function() {
+                    // Fallback to search for Akshaya Vasusri pride, Dundigal
+                    const fallbackUrl = 'https://maps.google.com/?q=Akshaya+Vasusri+pride,+Dundigal';
+                    openUrl(fallbackUrl);
+                });
+            } else {
+                const fallbackUrl = 'https://maps.google.com/?q=Akshaya+Vasusri+pride,+Dundigal';
+                openUrl(fallbackUrl);
+            }
+        }
     </script>
 
 </body>
